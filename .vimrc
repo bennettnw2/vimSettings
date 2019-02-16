@@ -57,7 +57,7 @@ set autoindent
 "Expand tabs into spaces
 set expandtab
 
-"Need to set tabstop and shiftwidth to 4 in conjunction with expandtab (default tabstop is 8!)
+"Need to set tabstop and shiftwidth to 2 in conjunction with expandtab (default tabstop is 8!)
 set tabstop=2
 set shiftwidth=2
 
