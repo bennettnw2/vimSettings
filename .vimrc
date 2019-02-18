@@ -74,3 +74,7 @@ set colorcolumn=100     "setting end point
 set hlsearch            "highlight matches; turn off with :nohlsearch when done searching 
 set incsearch           "search as characters are entered
 
+
+" Plugin Settings
+let g:auto_save = 1  " enable AutoSave on Vim startup
+
