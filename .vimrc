@@ -33,8 +33,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "-> Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " I'm going to put my plugins here:
-
+" ============================================
 Plugin 'https://github.com/907th/vim-auto-save'
+Plugin 'https://github.com/tkhren/vim-fake'
+Plugin 'https://github.com/Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,12 +71,12 @@ set shiftwidth=2
 syntax on
 colorscheme relaxedgreen
 
-set colorcolumn=100     "setting end point
+" set colorcolumn=100     "setting end point
 
 set hlsearch            "highlight matches; turn off with :nohlsearch when done searching 
 set incsearch           "search as characters are entered
 
 
-" Plugin Settings
+" Plugin Configurations 
 let g:auto_save = 1  " enable AutoSave on Vim startup
-
+au BufReadPost *.ejs set filetype=html "mark my ejs as html to enable sparkup
