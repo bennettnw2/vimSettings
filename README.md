@@ -1,3 +1,3 @@
 # vimSettings
 (My personal vim settings) \
-Place this file in your users root directory as .vimrc
+Place this file in your user's root directory as .vimrc
