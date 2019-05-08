@@ -80,3 +80,11 @@ set incsearch           "search as characters are entered
 " Plugin Configurations 
 let g:auto_save = 1  " enable AutoSave on Vim startup
 au BufReadPost *.ejs set filetype=html "mark my ejs as html to enable sparkup
+
+" I have no idea what this does....
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Abbreviations (TextExpanders)
+iab {{ ({<CR><CR>})<Up><Left><TAB>
+iab ejs <% %><Left><Left><Left>
+iab eja <%= %><Left><Left><Left>
