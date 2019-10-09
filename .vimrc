@@ -36,10 +36,13 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " ============================================
 Plugin 'https://github.com/907th/vim-auto-save'
 Plugin 'https://github.com/tkhren/vim-fake'
-Plugin 'https://github.com/Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
+" Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -68,23 +71,51 @@ set shiftwidth=2
 " i may not need smart indent for javascript?
 " I also want to configure a thing that when I put a parenthesis or bracket or anything it will always do the matching on and then move back in between them
 
-syntax on
 colorscheme relaxedgreen
+syntax on
 
-" set colorcolumn=100     "setting end point
+" set colorcolumn=100   " setting end point
 
-set hlsearch            "highlight matches; turn off with :nohlsearch when done searching 
-set incsearch           "search as characters are entered
-
+set hlsearch            " highlight matches; turn off with :nohlsearch when done searching 
+set incsearch           " search as characters are entered
+set linebreak           " set linebreak on so that full words are wrapped
 
 " Plugin Configurations 
 let g:auto_save = 1  " enable AutoSave on Vim startup
 au BufReadPost *.ejs set filetype=html "mark my ejs as html to enable sparkup
 
-" I have no idea what this does....
+" Config to be able to yank and paste from Vim
+set clipboard=unnamed
+
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" This option if uncommented will remove parens matching 
+" let g:loaded_matchparen=1
+
 " Abbreviations (TextExpanders)
+" +++ EJS +++
 iab {{ ({<CR><CR>})<Up><Left><TAB>
 iab ejs <% %><Left><Left><Left>
 iab eja <%= %><Left><Left><Left>
+
+" +++ JAVA +++
+iab sout System.out.println();<Left><Left>
+iab sprt System.out.print();<Left><Left>
+iab impscn import java.util.Scanner;
+iab newscn Scanner input = new Scanner(System.in);
+iab scninp [TYPE] name = input.next();
+
+iab jvamn 
+\<CR>public class [CLASSNAME] {
+\<CR><Space><Space>public static void main(String [] args) {
+\<CR>
+\<CR><Space><Space><Space><Space>System.out.println( "Hello Borld!" );
+\<CR>
+\<CR><C-]>}
+\<CR>}
+
+
+" Cursor shape change in different modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
